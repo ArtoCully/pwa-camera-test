@@ -1,0 +1,19 @@
+{
+  "name": "pwa-camera-test",
+  "version": "1.0.0",
+  "description": "pwa camera test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtoCully/pwa-camera-test.git"
+  },
+  "author": "artocully@noreply.github.users.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtoCully/pwa-camera-test/issues"
+  },
+  "homepage": "https://github.com/ArtoCully/pwa-camera-test#readme"
+}
