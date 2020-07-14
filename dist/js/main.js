@@ -1,25 +1,2 @@
-"use strict";
-
-require("core-js/modules/es.promise");
-
-document.addEventListener('DOMContentLoaded', event => {
-  console.log('document loaded');
-  const element = document.getElementById('theFile');
-  element.addEventListener('change', upload);
-});
-
-function upload() {
-  console.log('test');
-  return new Promise(async (resolve, reject) => {
-    const filePicker = document.querySelector('input');
-
-    if (!filePicker || !filePicker.files || filePicker.files.length <= 0) {
-      reject('No file selected.');
-      return;
-    }
-
-    const myFile = filePicker.files[0];
-    console.log(myFile);
-    resolve();
-  });
-}
+"use strict";function asyncGeneratorStep(e,n,t,r,o,a,c){try{var u=e[a](c),i=u.value}catch(e){return void t(e)}u.done?n(i):Promise.resolve(i).then(r,o)}function _asyncToGenerator(u){return function(){var e=this,c=arguments;return new Promise(function(n,t){var r=u.apply(e,c);function o(e){asyncGeneratorStep(r,n,t,o,a,"next",e)}function a(e){asyncGeneratorStep(r,n,t,o,a,"throw",e)}o(void 0)})}}function upload(){return console.log("test"),new Promise(function(){var t=_asyncToGenerator(regeneratorRuntime.mark(function e(n,t){var r,o;return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(!(r=document.querySelector("input"))||!r.files||r.files.length<=0)return t("No file selected."),e.abrupt("return");e.next=4;break;case 4:o=r.files[0],console.log(o),n();case 7:case"end":return e.stop()}},e)}));return function(e,n){return t.apply(this,arguments)}}())}document.addEventListener("DOMContentLoaded",function(e){console.log("document loaded"),document.getElementById("theFile").addEventListener("change",upload)});
+//# sourceMappingURL=../sourceMap.map

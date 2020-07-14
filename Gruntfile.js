@@ -23,8 +23,19 @@ module.exports = function(grunt) {
           sourceMapName : 'dist/sourceMap.map'
         },
         src : 'public/js-compiled/**/*-compiled.js',
-        dest : 'dist/all.min.js'
+        dest : 'dist/js/main.js'
       }
+    },
+    htmlmin: {                                     
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'dist/index.html': 'public/index.html',
+        }
+      },
     }
   });
 
@@ -34,6 +45,8 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
   // Default task(s).
-  grunt.registerTask('default', ['babel', 'uglify']);
+  grunt.registerTask('default', ['htmlmin', 'babel', 'uglify']);
 };
