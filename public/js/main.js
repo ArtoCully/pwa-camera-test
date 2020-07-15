@@ -25,8 +25,29 @@ function upload() {
       return;
     }
 
-    console.log(myFile);
+    const myBase64File = await convert(myFile);
+
+    console.log(`Your file is ${myFile}`);
+    console.log(`Your base64 image is ${myBase64File}`);
     
     resolve();
   }); 
+}
+
+function convert(myFile) {
+  return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      if (fileReader && myFile) {
+          fileReader.readAsDataURL(myFile);
+          fileReader.onload = () => {
+              resolve(fileReader.result);
+          };
+
+          fileReader.onerror = (error) => {
+              reject(error);
+          };
+      } else {
+          reject('No file provided');
+      }
+  });
 }
