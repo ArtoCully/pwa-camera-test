@@ -26,9 +26,12 @@ function upload() {
     }
 
     const myBase64File = await convert(myFile);
+    const image = await createImage(document.getElementById('theImage'), myBase64File);
+    showElement(image);
 
     console.log(`Your file is ${myFile}`);
     console.log(`Your base64 image is ${myBase64File}`);
+    console.log(`Your image is ${image}`);
     
     resolve();
   }); 
@@ -50,4 +53,16 @@ function convert(myFile) {
           reject('No file provided');
       }
   });
+}
+
+function createImage(element, myBase64File) {
+  element.src = myBase64File;
+  return element;
+}
+
+function showElement(element) {
+  if (element.classList.contains('hidden')) {
+    element.classList.remove('hidden');
+    element.classList.add('show');
+  }
 }
