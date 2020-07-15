@@ -15,11 +15,16 @@ function upload() {
         || filePicker.files.length <= 0
       ) {
         reject('No file selected.');
-        return;
-    }
-    
+        return;   
+      }
+
     const myFile = filePicker.files[0];
     
+    if (myFile.size > 10485760) {
+      reject('Image is too big (max. 10 Mb)');
+      return;
+    }
+
     console.log(myFile);
     
     resolve();
